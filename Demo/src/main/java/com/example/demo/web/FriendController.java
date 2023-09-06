@@ -6,12 +6,14 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.domain.Friend;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class FriendController {
@@ -35,7 +37,10 @@ public class FriendController {
 	}
 	
 	@PostMapping("/addFriend")
-	public String addFriend(@ModelAttribute Friend friend, Model model) {
+	public String addFriend(@Valid Friend friend, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "friendList";
+		}
 		friends.add(friend);
 		model.addAttribute("friend", friend);
 		return "redirect:/index";
