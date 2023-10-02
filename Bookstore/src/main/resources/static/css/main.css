@@ -30,3 +30,15 @@ table {
     color: #ffffff;
   }
   
+  .logout {
+      border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: #3399ff;
+    color: #ffffff;
+    margin-bottom: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  
