@@ -2,7 +2,6 @@ package Bookstore.Bookstore.web;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +20,7 @@ public class RestBookController {
 	@Autowired
 	private BookRepository repository; 
 
-	
-	private final AtomicLong counter = new AtomicLong();
-	
+		
 	
 	@GetMapping("/books")
 	public List<Book> bookListRest() {

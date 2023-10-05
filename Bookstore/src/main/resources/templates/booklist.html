@@ -8,8 +8,13 @@
 
 <body>
 <h1>Books :)</h1>
+
+	<div >
+       <span  sec:authentication="name">Name</span>
+		
+	</div>
 	
-	<div>
+	<div class= logOut>
 		<form th:action="@{/logout}" method="post">
 			<input class="logout" type="submit" value="Sing Out" />
 		</form>
